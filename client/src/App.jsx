@@ -24,9 +24,9 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (editindex) {  // ✅ Check if we are updating
-        await axios.put(`http://localhost:8000/${editindex}`, userdata); 
+        await axios.put(`https://mongo-car-dep.onrender.com/${editindex}`, userdata); 
     } else {  // ✅ Else, create new entry
-        await axios.post('http://localhost:8000', userdata);
+        await axios.post('https://mongo-car-dep.onrender.com', userdata);
     }
     seteditIndex(null); 
     setuserData({ name: "", price: "", quantity: "", description: "", colour: "" }); // ✅ Form Reset
@@ -35,7 +35,7 @@ function App() {
 
 
 const handleDelete = async (id) => {  
-  await axios.delete(`http://localhost:8000/${id}`);  // ✅ MongoDB _id send
+  await axios.delete(`https://mongo-car-dep.onrender.com/${id}`);  // ✅ MongoDB _id send
   fetchData();
 };
 
@@ -45,7 +45,7 @@ const handleDelete = async (id) => {
   }
 
   const fetchData = async() => {
-    const res = await axios.get('http://localhost:8000');
+    const res = await axios.get('https://mongo-car-dep.onrender.com');
     setsubmitData(res.data);
   }
 
