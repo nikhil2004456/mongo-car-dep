@@ -8,7 +8,7 @@ dbConnect()
 const app = express()
 
 app.use(cors({
-    origin: "http://localhost:5173",  // React app ka origin yaha likho
+    origin: "https://mongo-car-dep.vercel.app",  // React app ka origin yaha likho
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
